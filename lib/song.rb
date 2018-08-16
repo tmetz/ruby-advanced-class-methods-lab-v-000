@@ -54,4 +54,13 @@ class Song
     song.name = parse_info[1]
     song
   end
+  def self.create_from_filename(filename)
+    song = self.new
+    parse_info = filename.chomp(".mp3").split(" - ")
+    song.artist_name = parse_info[0]
+    song.name = parse_info[1]
+    @@all << song
+    song
+  end
+  
 end
