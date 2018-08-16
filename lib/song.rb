@@ -49,10 +49,9 @@ class Song
 
   def self.new_from_filename(filename)
     song = self.new
-    parse_info = filename[-4].split(" - ")
+    parse_info = filename.chomp(".mp3").split(" - ")
     song.artist_name = parse_info[0]
     song.name = parse_info[1]
-    @@all << song
     song
   end
 end
